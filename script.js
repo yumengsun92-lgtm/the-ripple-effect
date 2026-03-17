@@ -14,20 +14,24 @@ const podcastData = {
   ],
   hosts: [
     {
+      name: "Jane McGhee",
+      role: "Facilitator",
+    },
+    {
       name: "Ilam Muralidharan",
-      role: "Host",
+      role: "Contributor",
     },
     {
       name: "Min Jeong Kim",
-      role: "Host",
+      role: "Contributor",
     },
     {
       name: "Cindy Ng",
-      role: "Host",
+      role: "Contributor",
     },
     {
       name: "Yumeng Sun",
-      role: "Host",
+      role: "Contributor",
     },
   ],
   resources: {
@@ -35,7 +39,7 @@ const podcastData = {
       fileHref: "./assets/the-ripple-effect-transcript.pdf",
     },
     mindmap: {
-      fileHref: "./assets/the-ripple-effect-mindmap.svg",
+      fileHref: "./assets/the-ripple-effect-mindmap.jpg",
     },
   },
 };
