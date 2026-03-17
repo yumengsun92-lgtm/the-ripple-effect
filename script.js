@@ -2,11 +2,11 @@ const podcastData = {
   title: "The Ripple Effect",
   subtitle:
     "A Podcast about the Entangled Work of Pedagogists in Relation with Children, Educators and More-than-human Others",
-  publishedAt: "March 16, 2026",
-  duration: "26 min 04 sec",
+  publishedAt: "March 17, 2026",
+  duration: "25 min 17 sec",
   coverSrc: "./assets/ripple-cover-square.jpg",
   coverPosition: "center",
-  audioSrc: "./assets/the-ripple-effect.m4a",
+  audioSrc: "./assets/the-ripple-effect.mp3",
   summary:
     "This is a podcast for educators and leaders who are curious about new ideas shaping early childhood education.",
   description: [
