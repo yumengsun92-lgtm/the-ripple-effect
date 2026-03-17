@@ -6,7 +6,7 @@ const podcastData = {
   duration: "25 min 17 sec",
   coverSrc: "./assets/ripple-cover-square.jpg",
   coverPosition: "center",
-  audioSrc: "./assets/the-ripple-effect.mp3",
+  audioSrc: "./assets/the-ripple-effect-v4.mp3",
   summary:
     "This is a podcast for educators and leaders who are curious about new ideas shaping early childhood education.",
   description: [
