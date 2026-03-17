@@ -74,6 +74,44 @@
                 Play
               </button>
 
+              <div class="speed-wrap" aria-label="Playback speed controls">
+                <span class="speed-label">Speed</span>
+                <div class="speed-buttons" role="group" aria-label="Playback speeds">
+                  <button
+                    class="speed-button is-active"
+                    type="button"
+                    data-speed-rate="1"
+                    aria-pressed="true"
+                  >
+                    1x
+                  </button>
+                  <button
+                    class="speed-button"
+                    type="button"
+                    data-speed-rate="1.5"
+                    aria-pressed="false"
+                  >
+                    1.5x
+                  </button>
+                  <button
+                    class="speed-button"
+                    type="button"
+                    data-speed-rate="2"
+                    aria-pressed="false"
+                  >
+                    2x
+                  </button>
+                  <button
+                    class="speed-button"
+                    type="button"
+                    data-speed-rate="3"
+                    aria-pressed="false"
+                  >
+                    3x
+                  </button>
+                </div>
+              </div>
+
               <div class="timeline-wrap">
                 <label class="sr-only" for="progress-slider">Audio progress</label>
                 <input

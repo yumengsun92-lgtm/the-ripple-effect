@@ -302,6 +302,51 @@ img {
   box-shadow: none;
 }
 
+.speed-wrap {
+  display: grid;
+  gap: 10px;
+}
+
+.speed-label {
+  color: var(--text-soft);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.speed-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.speed-button {
+  min-width: 72px;
+  min-height: 42px;
+  padding: 8px 14px;
+  border: 1px solid rgba(50, 87, 66, 0.14);
+  border-radius: 999px;
+  background: #f8fcf8;
+  color: var(--accent-deep);
+  cursor: pointer;
+  font-size: 0.98rem;
+  font-weight: 700;
+  transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.speed-button.is-active {
+  background: linear-gradient(180deg, var(--accent) 0%, var(--accent-deep) 100%);
+  color: #fffdfb;
+  border-color: transparent;
+  box-shadow: 0 10px 20px rgba(53, 89, 67, 0.16);
+}
+
+.speed-button:hover,
+.speed-button:focus-visible {
+  transform: translateY(-1px);
+}
+
 .timeline-wrap {
   display: grid;
   gap: 12px;
@@ -499,6 +544,7 @@ img {
 
 .resource-button:hover:not(:disabled),
 .resource-button:focus-visible:not(:disabled),
+.speed-button:focus-visible,
 .volume-toggle:hover,
 .volume-toggle:focus-visible,
 .play-toggle:focus-visible,

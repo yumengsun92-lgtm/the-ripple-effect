@@ -60,6 +60,7 @@ const elements = {
   progressSlider: document.getElementById("progress-slider"),
   volumeToggle: document.getElementById("volume-toggle"),
   volumeSlider: document.getElementById("volume-slider"),
+  speedButtons: Array.from(document.querySelectorAll("[data-speed-rate]")),
   currentTime: document.getElementById("current-time"),
   totalTime: document.getElementById("total-time"),
   playerBadge: document.getElementById("player-badge"),
@@ -70,6 +71,7 @@ const playbackState = {
   usingPlaceholderAudio: false,
   objectUrl: "",
   previousVolume: 0.85,
+  playbackRate: 1,
 };
 
 function initialsFromName(name) {
@@ -170,6 +172,22 @@ function applyInitialVolume() {
   syncVolumeUi();
 }
 
+function syncSpeedUi() {
+  const activeRate = String(playbackState.playbackRate);
+
+  elements.speedButtons.forEach((button) => {
+    const isActive = button.dataset.speedRate === activeRate;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-pressed", isActive ? "true" : "false");
+  });
+}
+
+function applyPlaybackRate(rate) {
+  playbackState.playbackRate = rate;
+  elements.audio.playbackRate = rate;
+  syncSpeedUi();
+}
+
 function prepareAudioSource() {
   if (podcastData.audioSrc) {
     releasePlaceholderAudio();
@@ -177,6 +195,7 @@ function prepareAudioSource() {
     elements.audio.src = podcastData.audioSrc;
     elements.audio.load();
     playbackState.usingPlaceholderAudio = false;
+    elements.audio.playbackRate = playbackState.playbackRate;
     elements.playerBadge.textContent = "Episode Audio";
     elements.playerNote.textContent = "The full episode audio is connected and ready to play.";
     return;
@@ -357,6 +376,18 @@ function bindPlayerEvents() {
     syncPlayerUi();
   });
 
+  elements.speedButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const nextRate = Number(button.dataset.speedRate);
+
+      if (!Number.isFinite(nextRate)) {
+        return;
+      }
+
+      applyPlaybackRate(nextRate);
+    });
+  });
+
   elements.volumeSlider.addEventListener("input", (event) => {
     const nextVolume = Number(event.target.value) / 100;
     elements.audio.volume = nextVolume;
@@ -392,6 +423,7 @@ function init() {
   bindPlayerEvents();
   prepareAudioSource();
   applyInitialVolume();
+  applyPlaybackRate(playbackState.playbackRate);
   syncPlayerUi();
 }
 
