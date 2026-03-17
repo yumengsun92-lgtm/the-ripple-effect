@@ -3,10 +3,10 @@ const podcastData = {
   subtitle:
     "A Podcast about the Entangled Work of Pedagogists in Relation with Children, Educators and More-than-human Others",
   publishedAt: "March 16, 2026",
-  duration: "25 min 15 sec",
+  duration: "26 min 04 sec",
   coverSrc: "./assets/ripple-cover-square.jpg",
   coverPosition: "center",
-  audioSrc: "./assets/the-ripple-effect.mp3",
+  audioSrc: "./assets/the-ripple-effect.m4a",
   summary:
     "This is a podcast for educators and leaders who are curious about new ideas shaping early childhood education.",
   description: [
