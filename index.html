@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Podcast 单集预览</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="top-banner" aria-label="页面介绍">
+        <p class="eyebrow">Podcast Preview</p>
+        <h1 class="page-title">单集 Podcast 预览页</h1>
+        <p class="page-intro">
+          这是一个面向大字号和高可读性的网页框架，后续只需要替换内容数据即可接入真实节目资料。
+        </p>
+      </header>
+
+      <main class="layout" id="app">
+        <section class="hero-player" aria-labelledby="episode-title">
+          <div class="cover-wrap">
+            <div
+              class="cover-art"
+              id="cover-art"
+              role="img"
+              aria-label="Podcast 封面占位图"
+            >
+              <span class="cover-label">Podcast Cover</span>
+            </div>
+          </div>
+
+          <div class="hero-copy">
+            <p class="section-kicker" id="series-name">本期节目</p>
+            <h2 class="episode-title" id="episode-title">加载中...</h2>
+            <p class="episode-subtitle" id="episode-subtitle"></p>
+
+            <dl class="meta-list">
+              <div class="meta-item">
+                <dt>发布时间</dt>
+                <dd id="published-at">-</dd>
+              </div>
+              <div class="meta-item">
+                <dt>时长</dt>
+                <dd id="duration-label">-</dd>
+              </div>
+            </dl>
+          </div>
+
+          <section class="player-panel" aria-labelledby="player-heading">
+            <div class="player-head">
+              <div>
+                <p class="section-kicker">音频播放器</p>
+                <h3 class="panel-title" id="player-heading">本集试听</h3>
+              </div>
+              <span class="player-badge" id="player-badge">占位音频</span>
+            </div>
+
+            <p class="player-note" id="player-note">
+              暂无真实音频文件，当前使用占位音频模拟播放器交互。
+            </p>
+
+            <audio id="audio-element" preload="metadata"></audio>
+
+            <div class="player-controls">
+              <button
+                class="play-toggle"
+                id="play-toggle"
+                type="button"
+                aria-label="播放音频"
+                aria-pressed="false"
+                disabled
+              >
+                播放
+              </button>
+
+              <div class="timeline-wrap">
+                <label class="sr-only" for="progress-slider">音频播放进度</label>
+                <input
+                  id="progress-slider"
+                  class="progress-slider"
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="0"
+                  step="1"
+                  disabled
+                />
+                <div class="time-row" aria-live="polite">
+                  <span id="current-time">00:00</span>
+                  <span id="total-time">00:00</span>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <section class="content-column">
+          <section class="info-card summary-card" aria-labelledby="summary-heading">
+            <p class="section-kicker">节目摘要</p>
+            <h3 class="panel-title" id="summary-heading">先看重点</h3>
+            <p class="lead-copy" id="episode-summary"></p>
+            <div class="description-copy" id="episode-description"></div>
+          </section>
+
+          <section class="info-card hosts-card" aria-labelledby="hosts-heading">
+            <p class="section-kicker">Host 介绍</p>
+            <h3 class="panel-title" id="hosts-heading">本期嘉宾与主持人</h3>
+            <div class="hosts-grid" id="hosts-grid"></div>
+          </section>
+
+          <section class="info-card resources-card" aria-labelledby="resources-heading">
+            <p class="section-kicker">参考资料</p>
+            <h3 class="panel-title" id="resources-heading">Transcript 与 Mindmap</h3>
+
+            <div class="resources-grid">
+              <article class="resource-card">
+                <div class="resource-card__head">
+                  <h4>Transcript</h4>
+                  <button
+                    class="resource-button"
+                    id="transcript-download"
+                    type="button"
+                  >
+                    下载 Transcript
+                  </button>
+                </div>
+                <p class="resource-preview" id="transcript-preview"></p>
+                <p class="resource-status" id="transcript-status"></p>
+              </article>
+
+              <article class="resource-card">
+                <div class="resource-card__head">
+                  <h4>Mindmap</h4>
+                  <button
+                    class="resource-button"
+                    id="mindmap-download"
+                    type="button"
+                  >
+                    下载 Mindmap
+                  </button>
+                </div>
+                <div class="mindmap-preview" id="mindmap-preview" aria-hidden="true">
+                  <span>Mindmap Preview</span>
+                </div>
+                <p class="resource-status" id="mindmap-status"></p>
+              </article>
+            </div>
+
+            <div class="links-block">
+              <h4 class="links-title">延伸阅读</h4>
+              <ul class="links-list" id="links-list"></ul>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
