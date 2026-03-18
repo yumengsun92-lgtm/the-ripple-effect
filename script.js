@@ -16,6 +16,8 @@ const podcastData = {
     {
       name: "Jane McGhee",
       role: "Facilitator",
+      imageSrc: "./assets/jane.jpg",
+      imagePosition: "center 18%",
     },
     {
       name: "Ilam Muralidharan",
@@ -33,12 +35,12 @@ const podcastData = {
       name: "Cindy Ng",
       role: "Contributor",
       imageSrc: "./assets/cindy.jpg",
-      imagePosition: "center 30%",
+      imagePosition: "center 18%",
     },
     {
       name: "Yumeng Sun",
       role: "Contributor",
-      imageSrc: "./assets/yumeng-portrait.jpg",
+      imageSrc: "./assets/yumeng.jpg",
       imagePosition: "center 18%",
     },
   ],
@@ -269,6 +271,7 @@ function renderHosts() {
       image.loading = "lazy";
       image.decoding = "async";
       image.style.objectPosition = host.imagePosition || "center";
+      image.style.transform = `scale(${host.imageScale || 1})`;
       avatar.appendChild(image);
     } else {
       avatar.textContent = initialsFromName(host.name);
