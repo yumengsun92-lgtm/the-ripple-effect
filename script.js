@@ -38,8 +38,8 @@ const podcastData = {
     {
       name: "Yumeng Sun",
       role: "Contributor",
-      imageSrc: "./assets/yumeng.jpg",
-      imagePosition: "center 16%",
+      imageSrc: "./assets/yumeng-id.jpg",
+      imagePosition: "center",
     },
   ],
   resources: {
