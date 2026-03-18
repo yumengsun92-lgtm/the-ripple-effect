@@ -20,18 +20,26 @@ const podcastData = {
     {
       name: "Ilam Muralidharan",
       role: "Contributor",
+      imageSrc: "./assets/ilam.jpg",
+      imagePosition: "center 20%",
     },
     {
       name: "Min Jeong Kim",
       role: "Contributor",
+      imageSrc: "./assets/min-jeong.jpg",
+      imagePosition: "center 18%",
     },
     {
       name: "Cindy Ng",
       role: "Contributor",
+      imageSrc: "./assets/cindy.jpg",
+      imagePosition: "center 30%",
     },
     {
       name: "Yumeng Sun",
       role: "Contributor",
+      imageSrc: "./assets/yumeng.jpg",
+      imagePosition: "center 16%",
     },
   ],
   resources: {
@@ -252,7 +260,19 @@ function renderHosts() {
     const avatar = document.createElement("div");
     avatar.className = "host-avatar";
     avatar.setAttribute("aria-hidden", "true");
-    avatar.textContent = initialsFromName(host.name);
+
+    if (host.imageSrc) {
+      avatar.classList.add("has-photo");
+      const image = document.createElement("img");
+      image.src = host.imageSrc;
+      image.alt = host.name;
+      image.loading = "lazy";
+      image.decoding = "async";
+      image.style.objectPosition = host.imagePosition || "center";
+      avatar.appendChild(image);
+    } else {
+      avatar.textContent = initialsFromName(host.name);
+    }
 
     const copy = document.createElement("div");
     const name = document.createElement("h4");
