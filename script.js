@@ -32,14 +32,14 @@ const podcastData = {
     {
       name: "Cindy Ng",
       role: "Contributor",
-      imageSrc: "./assets/cindy-portrait.jpg",
-      imagePosition: "center 18%",
+      imageSrc: "./assets/cindy-framed.jpg",
+      imagePosition: "center 34%",
     },
     {
       name: "Yumeng Sun",
       role: "Contributor",
-      imageSrc: "./assets/yumeng-portrait.jpg",
-      imagePosition: "center 18%",
+      imageSrc: "./assets/yumeng-framed.jpg",
+      imagePosition: "center 34%",
     },
   ],
   resources: {
